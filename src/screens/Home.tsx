@@ -1,6 +1,7 @@
 import type { PortfolioData } from '../types';
 import { openExternal } from '../utils/links';
 import { splitSentences } from '../utils/text';
+import SkillGrid from '../components/SkillGrid';
 import logo from '../assets/logo.png';
 
 const HIGHLIGHT_META = [
@@ -82,11 +83,7 @@ export default function Home({
             {topSkills.length > 0 && (
                 <>
                     <div className="section-label">Core Skills</div>
-                    <div className="filter-scroll">
-                        {topSkills.map((skill) => (
-                            <span className="chip" key={skill}>{skill}</span>
-                        ))}
-                    </div>
+                    <SkillGrid skills={topSkills} />
                 </>
             )}
 

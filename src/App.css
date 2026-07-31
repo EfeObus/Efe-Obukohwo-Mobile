@@ -418,14 +418,36 @@
 
 .skill-chip-icon {
     display: inline-flex;
-    width: 13px;
-    height: 13px;
+    align-items: center;
+    justify-content: center;
+    width: 15px;
+    height: 15px;
     flex-shrink: 0;
 }
 
 .skill-chip-icon svg {
     width: 100%;
     height: 100%;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 10px;
+}
+
+.skill-grid-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--secondary-black);
+    border: 1px solid rgba(255, 215, 0, 0.15);
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 11.5px;
+    color: var(--gray-light);
+    line-height: 1.3;
 }
 
 .chip-btn.active {

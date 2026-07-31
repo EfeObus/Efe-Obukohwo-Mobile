@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 import BackHeader from '../components/BackHeader';
-import SkillChip from '../components/SkillChip';
+import SkillGrid from '../components/SkillGrid';
 import type { RoleTrack } from '../types';
 
 const ROLES: { key: RoleTrack; label: string }[] = [
@@ -39,11 +39,7 @@ export default function Skills({ skills, onBack }: { skills: Record<string, stri
             {categories.map((cat) => (
                 <Fragment key={cat}>
                     <div className="section-label">{cat}</div>
-                    <div className="chip-row">
-                        {skills[cat].map((skill) => (
-                            <SkillChip skill={skill} key={skill} />
-                        ))}
-                    </div>
+                    <SkillGrid skills={skills[cat]} />
                 </Fragment>
             ))}
         </div>
