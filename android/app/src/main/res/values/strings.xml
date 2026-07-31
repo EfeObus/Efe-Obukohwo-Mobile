@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Efe Obukohwo</string>
+    <string name="title_activity_main">Efe Obukohwo</string>
+    <string name="package_name">com.efeobukohwo.portfolio</string>
+    <string name="custom_url_scheme">com.efeobukohwo.portfolio</string>
+</resources>

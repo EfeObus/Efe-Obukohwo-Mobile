@@ -1,0 +1,53 @@
+PODS:
+  - Capacitor (8.4.2):
+    - CapacitorCordova
+  - CapacitorBrowser (8.0.4):
+    - Capacitor
+  - CapacitorCommunityFileOpener (8.0.1):
+    - Capacitor
+  - CapacitorCordova (8.4.2)
+  - CapacitorFilesystem (8.1.2):
+    - Capacitor
+    - IONFilesystemLib (~> 1.1.1)
+  - CapacitorPreferences (8.0.1):
+    - Capacitor
+  - IONFilesystemLib (1.1.2)
+
+DEPENDENCIES:
+  - "Capacitor (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorBrowser (from `../../node_modules/@capacitor/browser`)"
+  - "CapacitorCommunityFileOpener (from `../../node_modules/@capacitor-community/file-opener`)"
+  - "CapacitorCordova (from `../../node_modules/@capacitor/ios`)"
+  - "CapacitorFilesystem (from `../../node_modules/@capacitor/filesystem`)"
+  - "CapacitorPreferences (from `../../node_modules/@capacitor/preferences`)"
+
+SPEC REPOS:
+  trunk:
+    - IONFilesystemLib
+
+EXTERNAL SOURCES:
+  Capacitor:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorBrowser:
+    :path: "../../node_modules/@capacitor/browser"
+  CapacitorCommunityFileOpener:
+    :path: "../../node_modules/@capacitor-community/file-opener"
+  CapacitorCordova:
+    :path: "../../node_modules/@capacitor/ios"
+  CapacitorFilesystem:
+    :path: "../../node_modules/@capacitor/filesystem"
+  CapacitorPreferences:
+    :path: "../../node_modules/@capacitor/preferences"
+
+SPEC CHECKSUMS:
+  Capacitor: 7a1ef4c3b846b5f32437a2b3e11803c1c702a6c5
+  CapacitorBrowser: 553fcb154526484a5d12efc38093d3f781cb6a82
+  CapacitorCommunityFileOpener: 6ab0411743ab81b72a4eac9b78a24d6207b12dcf
+  CapacitorCordova: 345eacdc4c8282415446aea4acd8c77d82480bd4
+  CapacitorFilesystem: 7d3e3df84be4f0d999a5d6baa23aeb30c2de6450
+  CapacitorPreferences: 0fa33b3affebf12d96358b491ed7c2b39bec3270
+  IONFilesystemLib: 21a63377696b2d8fab5632ecfb7d2ac67bddb68a
+
+PODFILE CHECKSUM: a1d88d21ceb1b6a3170a7e515d4638a1c317756a
+
+COCOAPODS: 1.16.2
