@@ -410,6 +410,24 @@
     padding: 6px 12px;
 }
 
+.skill-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.skill-chip-icon {
+    display: inline-flex;
+    width: 13px;
+    height: 13px;
+    flex-shrink: 0;
+}
+
+.skill-chip-icon svg {
+    width: 100%;
+    height: 100%;
+}
+
 .chip-btn.active {
     background: var(--gold);
     border-color: var(--gold);

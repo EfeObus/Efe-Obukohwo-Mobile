@@ -1,8 +1,9 @@
-export type MoreView = 'menu' | 'blog' | 'recommendations' | 'contact';
+export type MoreView = 'menu' | 'blog' | 'recommendations' | 'skills' | 'contact';
 
 const ITEMS: { view: MoreView; icon: string; label: string; hint: string }[] = [
     { view: 'blog', icon: '✎', label: 'Blog', hint: 'Write-ups on projects and lessons learned' },
     { view: 'recommendations', icon: '❝', label: 'Recommendations', hint: 'What managers and colleagues say' },
+    { view: 'skills', icon: '◈', label: 'Skills', hint: 'Full toolkit, grouped by role' },
     { view: 'contact', icon: '✉', label: 'Contact', hint: 'Send a message or reach out directly' }
 ];
 
@@ -10,7 +11,7 @@ export default function More({ onNavigate }: { onNavigate: (view: MoreView) => v
     return (
         <div>
             <h1 className="page-title">More</h1>
-            <p className="page-subtitle">Blog posts, recommendations, and a direct line to Efe.</p>
+            <p className="page-subtitle">Blog posts, recommendations, skills, and a direct line to Efe.</p>
 
             {ITEMS.map((item) => (
                 <button key={item.view} className="menu-row" onClick={() => onNavigate(item.view)}>

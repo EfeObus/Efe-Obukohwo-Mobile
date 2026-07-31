@@ -9,6 +9,7 @@ import InterviewPrep from './screens/InterviewPrep';
 import More, { type MoreView } from './screens/More';
 import BlogList from './screens/BlogList';
 import RecommendationsList from './screens/RecommendationsList';
+import Skills from './screens/Skills';
 import Contact from './screens/Contact';
 import { loadPortfolioData, type LoadResult } from './data/fetchPortfolioData';
 
@@ -65,6 +66,7 @@ function App() {
                 {tab === 'more' && moreView === 'recommendations' && (
                     <RecommendationsList recommendations={data.recommendations} onBack={() => setMoreView('menu')} />
                 )}
+                {tab === 'more' && moreView === 'skills' && <Skills skills={data.skills} onBack={() => setMoreView('menu')} />}
                 {tab === 'more' && moreView === 'contact' && <Contact personal={data.personal} onBack={() => setMoreView('menu')} />}
             </main>
 
