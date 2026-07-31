@@ -5,6 +5,16 @@ import type { Project } from '../types';
 
 const FILTER_TAGS = ['SQL', 'Python', 'Power BI', 'Tableau', 'Excel'];
 
+const CATEGORY_ICON: Record<string, string> = {
+    'data-analyst': '◈',
+    developer: '‹/›',
+    teacher: '✎'
+};
+
+function categoryIcon(project: Project): string {
+    return CATEGORY_ICON[project.category[0]] ?? '▤';
+}
+
 function matchesFilter(project: Project, filter: string): boolean {
     const haystack = project.technologies.join(' ').toLowerCase();
     if (filter === 'Excel') return haystack.includes('excel');
@@ -25,35 +35,52 @@ export default function Projects({ projects }: { projects: Project[] }) {
     if (selected) {
         return (
             <div>
-                <button className="btn-outline" style={{ marginBottom: 14 }} onClick={() => setSelected(null)}>
-                    ← Back to Projects
+                <button className="back-btn" style={{ marginBottom: 14 }} onClick={() => setSelected(null)}>
+                    ‹ <span>Back to Projects</span>
                 </button>
-                <h1 className="page-title">{selected.title}</h1>
-                <p className="page-subtitle">{selected.date}</p>
-                <HighlightList text={selected.description} />
-                <div className="chip-row">
-                    {selected.technologies.map((t) => (
-                        <span className="chip" key={t}>{t}</span>
-                    ))}
+
+                <div className="card">
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                        <div className="icon-badge">{categoryIcon(selected)}</div>
+                        <div>
+                            <div className="card-title" style={{ fontSize: 17 }}>{selected.title}</div>
+                            <div className="card-meta">{selected.date}</div>
+                        </div>
+                    </div>
+
+                    <div className="chip-row">
+                        {selected.technologies.map((t) => (
+                            <span className="chip" key={t}>{t}</span>
+                        ))}
+                    </div>
+
+                    {(selected.live || selected.github) && (
+                        <div className="btn-row">
+                            {selected.live && (
+                                <button className="btn-primary" onClick={() => openLink(selected.live!)}>
+                                    Live Demo
+                                </button>
+                            )}
+                            {selected.github && (
+                                <button className="btn-outline" onClick={() => openLink(selected.github!)}>
+                                    GitHub
+                                </button>
+                            )}
+                        </div>
+                    )}
+                    {selected.caseStudy && (
+                        <button
+                            className="btn-outline"
+                            style={{ marginTop: selected.live || selected.github ? 10 : 0 }}
+                            onClick={() => openLink(`https://efeobus.github.io/Efe-Obukohwo/${selected.caseStudy}`)}
+                        >
+                            Read Full Case Study
+                        </button>
+                    )}
                 </div>
-                {selected.live && (
-                    <button className="btn-primary" onClick={() => openLink(selected.live!)}>
-                        View Live Demo
-                    </button>
-                )}
-                {selected.github && (
-                    <button className="btn-outline" onClick={() => openLink(selected.github!)}>
-                        View on GitHub
-                    </button>
-                )}
-                {selected.caseStudy && (
-                    <button
-                        className="btn-outline"
-                        onClick={() => openLink(`https://efeobus.github.io/Efe-Obukohwo/${selected.caseStudy}`)}
-                    >
-                        Read Full Case Study
-                    </button>
-                )}
+
+                <div className="section-label">Project Breakdown</div>
+                <HighlightList text={selected.description} />
             </div>
         );
     }
@@ -88,8 +115,13 @@ export default function Projects({ projects }: { projects: Project[] }) {
                     style={{ width: '100%', textAlign: 'left', border: 'none' }}
                     onClick={() => setSelected(project)}
                 >
-                    <div className="card-title">{project.title}</div>
-                    <div className="card-meta">{project.date}</div>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                        <div className="icon-badge">{categoryIcon(project)}</div>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                            <div className="card-title">{project.title}</div>
+                            <div className="card-meta">{project.date}</div>
+                        </div>
+                    </div>
                     <p className="card-body">{project.shortDescription}</p>
                     <div className="chip-row">
                         {project.technologies.slice(0, 4).map((t) => (

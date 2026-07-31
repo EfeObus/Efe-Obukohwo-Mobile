@@ -14,8 +14,13 @@ export default function BlogList({ posts, onBack }: { posts: BlogPost[]; onBack:
 
             {posts.map((post) => (
                 <button key={post.url} className="card blog-card-btn" onClick={() => Browser.open({ url: SITE_BASE + post.url })}>
-                    <div className="card-meta">{post.date} · {post.readTime}</div>
-                    <div className="card-title" style={{ marginTop: 4 }}>{post.title}</div>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                        <div className="icon-badge">✎</div>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                            <div className="card-meta">{post.date} · {post.readTime}</div>
+                            <div className="card-title" style={{ marginTop: 4 }}>{post.title}</div>
+                        </div>
+                    </div>
                     <p className="card-body">{post.excerpt}</p>
                     <div className="chip-row">
                         {post.tags.map((tag) => (

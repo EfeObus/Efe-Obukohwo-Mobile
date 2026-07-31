@@ -3,10 +3,10 @@ import { FileOpener } from '@capacitor-community/file-opener';
 import { getOrDownloadResume } from '../data/resumeCache';
 
 const RESUMES = [
-    { label: 'Data Analyst Resume', filename: 'Efe_Obukohwo_Resume_DataAnalyst.pdf' },
-    { label: 'Developer Resume', filename: 'Efe_Obukohwo_Resume_Developer.pdf' },
-    { label: 'Teacher Resume', filename: 'Efe_Obukohwo_Resume_Teacher.pdf' },
-    { label: 'General Resume', filename: 'Efe_Obukohwo_Resume.pdf' }
+    { label: 'Data Analyst Resume', hint: 'SQL, Excel, Power BI, Tableau', icon: '◈', filename: 'Efe_Obukohwo_Resume_DataAnalyst.pdf' },
+    { label: 'Developer Resume', hint: 'React, Node.js, Flask, PostgreSQL', icon: '‹/›', filename: 'Efe_Obukohwo_Resume_Developer.pdf' },
+    { label: 'Teacher Resume', hint: 'Computer Science, Data Processing', icon: '✎', filename: 'Efe_Obukohwo_Resume_Teacher.pdf' },
+    { label: 'General Resume', hint: 'Full cross-role overview', icon: '▤', filename: 'Efe_Obukohwo_Resume.pdf' }
 ];
 
 export default function Resume() {
@@ -42,7 +42,13 @@ export default function Resume() {
 
             {RESUMES.map((resume) => (
                 <div className="card" key={resume.filename}>
-                    <div className="card-title">{resume.label}</div>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                        <div className="icon-badge">{resume.icon}</div>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                            <div className="card-title">{resume.label}</div>
+                            <div className="card-meta">{resume.hint}</div>
+                        </div>
+                    </div>
                     <button className="btn-primary" disabled={busy === resume.filename} onClick={() => open(resume.filename)}>
                         {busy === resume.filename ? 'Opening…' : 'View / Download PDF'}
                     </button>

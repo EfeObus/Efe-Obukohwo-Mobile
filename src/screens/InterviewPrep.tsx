@@ -29,8 +29,13 @@ export default function InterviewPrep() {
             <div className="section-label">Project Flashcards</div>
             {content.flashcards.map((card) => (
                 <div className="card" key={card.project}>
-                    <div className="card-title">{card.project}</div>
-                    <div className="card-meta">{card.headline}</div>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 4 }}>
+                        <div className="icon-badge">▲</div>
+                        <div style={{ flex: 1, minWidth: 0 }}>
+                            <div className="card-title">{card.project}</div>
+                            <div className="card-meta">{card.headline}</div>
+                        </div>
+                    </div>
                     <HighlightList text={card.detail} />
                 </div>
             ))}
@@ -38,7 +43,10 @@ export default function InterviewPrep() {
             <div className="section-label">STAR Story Bank</div>
             {content.starStories.map((story) => (
                 <div className="card" key={story.prompt}>
-                    <div className="card-title">{story.prompt}</div>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start' }}>
+                        <div className="icon-badge">★</div>
+                        <div className="card-title" style={{ flex: 1, minWidth: 0 }}>{story.prompt}</div>
+                    </div>
                     <div className="star-block">
                         <div className="star-label">Situation</div>
                         <p className="star-text">{story.situation}</p>
@@ -55,7 +63,10 @@ export default function InterviewPrep() {
             <div className="section-label">Concept Refreshers</div>
             {content.conceptRefreshers.map((item) => (
                 <div className="card" key={item.topic}>
-                    <div className="card-title">{item.topic}</div>
+                    <div style={{ display: 'flex', gap: 12, alignItems: 'flex-start', marginBottom: 4 }}>
+                        <div className="icon-badge">◎</div>
+                        <div className="card-title" style={{ flex: 1, minWidth: 0 }}>{item.topic}</div>
+                    </div>
                     <HighlightList text={item.notes} />
                 </div>
             ))}

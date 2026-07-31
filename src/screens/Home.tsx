@@ -54,7 +54,7 @@ export default function Home({
 
                 <div className="status-badge">
                     <span className="dot" />
-                    Open to Opportunities — Toronto, ON | Remote
+                    Open to Opportunities — Toronto, ON | Onsite | Hybrid | Remote | Willing to Relocate
                 </div>
             </div>
 
