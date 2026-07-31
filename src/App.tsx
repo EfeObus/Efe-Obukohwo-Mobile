@@ -47,7 +47,16 @@ function App() {
             </header>
 
             <main className="app-content">
-                {tab === 'home' && <Home data={data} />}
+                {tab === 'home' && (
+                    <Home
+                        data={data}
+                        onGoResume={() => changeTab('resume')}
+                        onGoContact={() => {
+                            setTab('more');
+                            setMoreView('contact');
+                        }}
+                    />
+                )}
                 {tab === 'projects' && <Projects projects={data.projects} />}
                 {tab === 'resume' && <Resume />}
                 {tab === 'prep' && <InterviewPrep />}
