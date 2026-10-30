@@ -113,7 +113,7 @@ export const interviewPrepData: Record<'dataAnalyst' | 'developer' | 'teacher', 
                 detail: 'AI career suite with offline-first sync and conflict resolution, Koin dependency injection, Prometheus/Sentry observability.'
             },
             {
-                project: 'TekVwarho ProAudit',
+                project: 'Tekvwa Pro Audit',
                 headline: '500+ API routes · 400+ automated tests',
                 detail: 'Enterprise Nigerian tax-compliance platform with Benford\'s Law fraud detection and a hash-chain immutable ledger.'
             }
