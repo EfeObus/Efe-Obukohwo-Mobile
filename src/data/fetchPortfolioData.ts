@@ -14,7 +14,7 @@ export interface LoadResult {
 }
 
 function normalize(data: PortfolioData): PortfolioData {
-    return { ...data, blog: data.blog ?? [], recommendations: data.recommendations ?? [] };
+    return { ...data, blog: data.blog ?? [], research: data.research ?? [], recommendations: data.recommendations ?? [] };
 }
 
 async function fetchWithTimeout(url: string, timeoutMs: number): Promise<Response> {

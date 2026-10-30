@@ -8,6 +8,7 @@ import Resume from './screens/Resume';
 import InterviewPrep from './screens/InterviewPrep';
 import More, { type MoreView } from './screens/More';
 import BlogList from './screens/BlogList';
+import ResearchList from './screens/ResearchList';
 import RecommendationsList from './screens/RecommendationsList';
 import Skills from './screens/Skills';
 import Contact from './screens/Contact';
@@ -62,6 +63,7 @@ function App() {
                 {tab === 'resume' && <Resume />}
                 {tab === 'prep' && <InterviewPrep />}
                 {tab === 'more' && moreView === 'menu' && <More onNavigate={setMoreView} />}
+                {tab === 'more' && moreView === 'research' && <ResearchList items={data.research} onBack={() => setMoreView('menu')} />}
                 {tab === 'more' && moreView === 'blog' && <BlogList posts={data.blog} onBack={() => setMoreView('menu')} />}
                 {tab === 'more' && moreView === 'recommendations' && (
                     <RecommendationsList recommendations={data.recommendations} onBack={() => setMoreView('menu')} />

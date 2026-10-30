@@ -64,6 +64,25 @@ export interface BlogPost {
     url: string;
 }
 
+export type ResearchType = 'article' | 'issue' | 'thesis';
+
+export interface ResearchItem {
+    type: ResearchType;
+    title: string;
+    date: string;
+    readTime?: string;
+    status?: string;
+    venue?: string;
+    role?: string;
+    authors?: string[];
+    journal?: { name: string; volume?: string; issue?: string; pages?: string };
+    abstract?: string;
+    tags?: string[];
+    icon?: string;
+    page?: string;
+    links?: { pdf?: string; doi?: string; url?: string; code?: string; data?: string };
+}
+
 export interface Recommendation {
     name: string;
     title: string;
@@ -79,6 +98,7 @@ export interface PortfolioData {
     projects: Project[];
     skills: Record<string, string[]>;
     certifications: Certification[];
+    research: ResearchItem[];
     achievements: string[];
     blog: BlogPost[];
     recommendations: Recommendation[];
