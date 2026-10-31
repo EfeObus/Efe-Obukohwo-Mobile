@@ -100,7 +100,7 @@ export const interviewPrepData: Record<'dataAnalyst' | 'developer' | 'teacher', 
             {
                 project: 'Zodiac Real Estate AI (internship)',
                 headline: '88.3% ML accuracy · 20+ endpoint REST API',
-                detail: 'Production Flask/MySQL platform processing 49,551+ properties. 5-tier API security system (ML-powered XSS/CSRF detection) and a Dockerized CI/CD pipeline, leading a team of 5 developers.'
+                detail: 'Production Flask/MySQL platform processing 49,551+ properties. 5-tier API security system (ML-powered XSS/CSRF detection) and a Dockerized CI/CD pipeline, leading a team of 5 interns.'
             },
             {
                 project: 'TEKVWA Money',
@@ -130,7 +130,7 @@ export const interviewPrepData: Record<'dataAnalyst' | 'developer' | 'teacher', 
                 prompt: 'Tell me about a time you led a team.',
                 situation: 'Full Stack Developer Intern role on the Zodiac real estate analytics platform.',
                 task: 'Ship a production-grade platform on an internship timeline.',
-                action: 'Led full-stack development end to end and directed a team of 5 developers while deploying a Dockerized CI/CD pipeline.',
+                action: 'Led full-stack development end to end and directed a team of 5 interns while deploying a Dockerized CI/CD pipeline.',
                 result: '99.9% staging uptime, <400ms API response times, 85% test coverage.'
             },
             {
